@@ -2,7 +2,7 @@
  * Workshop #15
  * 1. Start creating classes for testable objects, such as "Issue"
  * 2. Move test actions into functions as we did on demo previously
- *    2.1 Update issue type, description etc.
+ *    2.1 Update issue type, description etc
  * 3. Use those functions in the spec file
  *
  * Expected result:
@@ -34,7 +34,7 @@
 describe('Issue details editing', () => {
   beforeEach(() => {
     cy.visit('/');
-    cy.url().should('eq', 'http://34.247.67.214:8080/project').then((url) => {
+    cy.url().should('eq', 'https://jira.ivorreic.com/project/board').then((url) => {
       cy.visit(url + '/board');
       cy.contains('This is an issue of type: Task.').click();
     });
@@ -110,4 +110,5 @@ describe('Issue details editing', () => {
   });
 
   const getIssueDetailsModal = () => cy.get('[data-testid="modal:issue-details"]');
+
 });

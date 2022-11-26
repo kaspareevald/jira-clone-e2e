@@ -14,10 +14,32 @@ describe('Issue filtering', () => {
     cy.visit('/');
   });
 
-  it('Should filter issues by title', () => {
+  it.only('Should filter issues by title', () => {
     getSearchInput().debounced('type', 'multiple assignee');
-    cy.get('[data-testid="list-issue"]').should('have.length', '1');
+    
+    //cy.get('[data-testid="list-issue"]').should('have.length', '1');
+
+    const dataForSearch = [
+
+    {
+      issueSearch: "multiple assignee",
+      expectedNumberOfFoundIssues: '1'
+    },
+    {
+      issueSearch: "an issue",
+      expectedNumberOfFoundIssues: '3'
+    },
+    {
+      issueSearch: "each issue",
+      expectedNumberOfFoundIssues: '2'
+    },
+  ]
+
   });
+
+  it.only('Should filter issues by title', () => {
+
+    
 
   /**
    * New tests can be created here for practice
