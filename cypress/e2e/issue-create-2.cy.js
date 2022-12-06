@@ -36,6 +36,12 @@ describe('Issue create', () => {
       cy.get('[data-testid="avatar:Lord Gaben"]').should('be.visible');
       cy.get('[data-testid="icon:story"]').should('be.visible');
     });
+
+    cy.get('.col-sm-4').then(elements=>{
+      const arrayOfElementsTexts = [...elements].map(element => element.innerText)
+      console.table(arrayOfElementsTexts)
+    })
+
   });
 
   it('Should validate title is required field if missing', () => {
